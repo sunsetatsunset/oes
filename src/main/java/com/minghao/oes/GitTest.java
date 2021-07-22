@@ -7,5 +7,6 @@ public class GitTest {
         System.out.println("a test conflict master");
         System.out.println("a test conflict");
         System.out.println("push test");
+        System.out.println("pull test");
     }
 }
