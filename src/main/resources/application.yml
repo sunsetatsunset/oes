@@ -1,0 +1,11 @@
+#mybatis
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.minghao.oes.domain
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/oes?serverTimezone=UTC
+    username: root
+    password: root
