@@ -9,6 +9,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,7 +31,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/getUsers", method = RequestMethod.GET)
+    @Cacheable(cacheNames = {"user"})
     public User getUser() {
+        System.out.println("查询id1");
         User user = userService.getUserById(1);
         return user;
     }
